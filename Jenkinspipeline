@@ -2,9 +2,8 @@ node {
     stage('scm checkout'){
         git credentialsId: 'github', url: 'https://github.com/babupavan/python-demoapp.git'
      }
-     stage('run maven'){
-        def mvnHome = tool name: 'maven', type: 'maven'
-        def mvnCMD = "${mvnHome}/bin/mvn"
-       sh "${mvnCMD} package"
-    }
+        stage('Build and Run') {
+            sh 'pip install -r requirements.txt'
+            sh 'python app.py'
+            }
 }
