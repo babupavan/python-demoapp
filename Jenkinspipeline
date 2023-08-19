@@ -1,0 +1,5 @@
+node {
+    stage('scm checkout'){
+        git credentialsId: 'github', url: 'https://github.com/babupavan/python-demoapp.git'
+    }
+}
