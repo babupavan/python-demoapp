@@ -2,4 +2,7 @@ node {
     stage('scm checkout'){
         git credentialsId: 'github', url: 'https://github.com/babupavan/python-demoapp.git'
      }
+     stage("run maven'){
+       sh '''mvn clean package
+    }
 }
