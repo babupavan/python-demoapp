@@ -3,7 +3,6 @@ node {
         git credentialsId: 'github', url: 'https://github.com/babupavan/python-demoapp.git'
      }
     stage('Build and Run') {
-      sh 'pip install -r /src/requirements.txt'
       sh 'python app.py'
         }
 }
